@@ -2,8 +2,8 @@
 import pygame
 import random
 
-WIDTH = 360
-HEIGHT = 480
+WIDTH = 600
+HEIGHT = 400
 FPS = 30
 
 # define colors
@@ -15,12 +15,18 @@ BLUE = (0, 0, 255)
 
 # initialize pygame and create window
 pygame.init()
-pygame.mixer.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("My Game")
+pygame.display.set_caption("Fibonacci Bubbles")
 clock = pygame.time.Clock()
 
-all_sprites = pygame.sprite.Group()
+# initalize values
+sum = 0
+f1 = 0
+f2 = 1
+numberOfBubbles = 0
+xCentre = 10
+yCentre = 200
+
 # Game loop
 running = True
 while running:
@@ -33,11 +39,23 @@ while running:
             running = False
 
     # Update
-    all_sprites.update()
-
+    
+    
+    if numberOfBubbles <= 10000:       # if 14 bubbles have not been drawn, keep updating values
+        sum = f1 + f2
+        f2 = f1
+        f1 = sum
+        radius = sum
+        numberOfBubbles += 1
+        pygame.draw.circle(screen, WHITE, [200,200], 100, 0)
+        print(f1, " ", f2)
+    
+    
     # Draw / render
     screen.fill(BLACK)
-    all_sprites.draw(screen)
+    
+    pygame.draw.rect(screen, WHITE, [100,100,100,100])
+    
     # *after* drawing everything, flip the display
     pygame.display.flip()
 
