@@ -23,10 +23,11 @@ bubbles = []                                            # array that will contai
 
 # --- DECLARE CLASSES
 class Bubble:                                           # class for each bubble object
-    def __init__(self, bubbleX, bubbleY, bubbleR):
+    def __init__(self, bubbleX, bubbleY, bubbleR, bubbleSpeed):
         self.bubbleX = bubbleX                          # the x position of the bubble
         self.bubbleY = bubbleY                          # the y position of the bubble
         self.bubbleR = bubbleR                          # the radius of the bubble
+        self.bubbleSpeed = bubbleSpeed
 
     def show(self, surface):                            # draws the bubble object onto the surface
         pygame.draw.circle(surface, WHITE,(self.bubbleX, self.bubbleY), self.bubbleR, 0)
@@ -53,12 +54,13 @@ while running:
         elif event.type == pygame.MOUSEBUTTONUP:        # checks for mouse click event
             mouseX = pygame.mouse.get_pos()[0]          # records mouse x value
             mouseY = pygame.mouse.get_pos()[1]          # record mouse y value
-            bubbles.append(Bubble(mouseX,mouseY,25))    # create a bubble os radius 25 at the position of the mouse
+            bubbles.append(Bubble(mouseX,mouseY,25,10))    # create a bubble os radius 25 at the position of the mouse
 
     # --- Update any changes in variables
     for bubble in bubbles:                              # move each bubble object in the bubble array
-        bubble.bubbleY += 1                             # each bubble will move down one pixel each loop
-    
+        bubble.bubbleY += bubble.bubbleSpeed            # each bubble will move each loop at the speed
+        if bubble.bubbleY + bubble.bubbleR > HEIGHT or bubble.bubbleY - bubble.bubbleR < 0:         # check if bubble is at edge screen
+            bubble.bubbleSpeed *= -1
     
 
     # --- Draw objects
