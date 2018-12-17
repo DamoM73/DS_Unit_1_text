@@ -19,16 +19,16 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
 # --- DECLARE GLOBAL VARIABLES
-bubbles = []
+bubbles = []                                            # array that will contain the bubble objects
 
 # --- DECLARE CLASSES
-class Bubble:
+class Bubble:                                           # claas for each bubble object
     def __init__(self, bubbleX, bubbleY, bubbleR):
-        self.bubbleX = bubbleX
-        self.bubbleY = bubbleY
-        self.bubbleR = bubbleR
+        self.bubbleX = bubbleX                          # the x position of the bubble
+        self.bubbleY = bubbleY                          # the y position of the bubble
+        self.bubbleR = bubbleR                          # the radius of the bubble
 
-    def show(self, surface):
+    def show(self, surface):                            # draws the bubble object onto the surface
         pygame.draw.circle(surface, WHITE,(self.bubbleX, self.bubbleY), self.bubbleR, 0)
 
 # --- DECLARE FUNCTIONS
