@@ -1,4 +1,4 @@
-class student:
+class Student:
     def __init__(self, name, age, subject1, subject2, subject3, birthCity, birthState):
         self.name = name
         self.age = age
@@ -11,8 +11,8 @@ class student:
         print(self.name, "studies", self.subjects[0] + ",", self.subjects[1] + ", and", self.subjects[2])
         print(self.name, "was born in", self.birthPlace[0] + ",", self.birthPlace[1])
 
-mary = student("Mary", 14, "Digital Technology", "Maths", "English", "Cairns", "Qld")
-michael = student("Michael", 16, "Digital Solutions", "Specialist Maths", "English", "Brisbane", "Qld")
+mary = Student("Mary", 14, "Digital Technology", "Maths", "English", "Cairns", "Qld")
+michael = Student("Michael", 16, "Digital Solutions", "Specialist Maths", "English", "Brisbane", "Qld")
 
 mary.details()
 print("")
