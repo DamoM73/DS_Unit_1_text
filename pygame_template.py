@@ -37,7 +37,7 @@ while running:
     for event in pygame.event.get():                    # retrieves events from event record                
         # closing window event
         if event.type == pygame.QUIT:
-            running = False
+            running = False                             # sets running condition to false, exiting the game loop
 
     # --- Update any changes in variables
     
