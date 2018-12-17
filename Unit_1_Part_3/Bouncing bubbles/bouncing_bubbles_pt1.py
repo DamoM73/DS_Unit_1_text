@@ -23,20 +23,20 @@ bubbles = []                                            # array that will contai
 
 # --- DECLARE CLASSES
 class Bubble:                                           # class for each bubble object
-    def __init__(self, bubbleX, bubbleY, bubbleR):
-        self.bubbleX = bubbleX                          # the x position of the bubble
-        self.bubbleY = bubbleY                          # the y position of the bubble
-        self.bubbleR = bubbleR                          # the radius of the bubble
+    def __init__(self, x, y, radius):
+        self.x = x                          # the x position of the bubble
+        self.y = y                          # the y position of the bubble
+        self.radius = radius                          # the radius of the bubble
 
     def show(self, surface):                            # draws the bubble object onto the surface
-        pygame.draw.circle(surface, WHITE,(self.bubbleX, self.bubbleY), self.bubbleR, 0)
+        pygame.draw.circle(surface, WHITE,(self.x, self.y), self.radius, 0)
 
 # --- DECLARE FUNCTIONS
 
 # --- SETUP (runs once)
 pygame.init()                                           # initialises pygame
 screen = pygame.display.set_mode((WIDTH, HEIGHT))       # creates the screen
-pygame.display.set_caption("Template")                  # sets the title bar text
+pygame.display.set_caption("Bouncing Bubbles")          # sets the title bar text
 clock = pygame.time.Clock()                             # initialised the pygame clock
 running = True                                          # sets the running condition to true
 
@@ -57,7 +57,7 @@ while running:
 
     # --- Update any changes in variables
     for bubble in bubbles:                              # move each bubble object in the bubble array
-        bubble.bubbleY += 1                             # each bubble will move down one pixel each loop
+        bubble.y += 10                                  # each bubble will move down 10 pixels each loop
     
     
 

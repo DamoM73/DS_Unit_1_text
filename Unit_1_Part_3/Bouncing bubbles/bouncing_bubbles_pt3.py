@@ -20,14 +20,16 @@ BLUE = (0, 0, 255)
 
 # --- DECLARE GLOBAL VARIABLES
 bubbles = []                                            # array that will contain the bubble objects
+gravity = 10
 
 # --- DECLARE CLASSES
 class Bubble:                                           # class for each bubble object
-    def __init__(self, x, y, radius, speed):
+    def __init__(self, x, y, radius, speed, bounceHeight):
         self.x = x                          # the x position of the bubble
         self.y = y                          # the y position of the bubble
         self.radius = radius                          # the radius of the bubble
         self.speed = speed
+        self.bounceHeight = bounceHeight
 
     def show(self, surface):                            # draws the bubble object onto the surface
         pygame.draw.circle(surface, WHITE,(self.x, self.y), self.radius, 0)
@@ -37,7 +39,7 @@ class Bubble:                                           # class for each bubble 
 # --- SETUP (runs once)
 pygame.init()                                           # initialises pygame
 screen = pygame.display.set_mode((WIDTH, HEIGHT))       # creates the screen
-pygame.display.set_caption("Bouncing Bubbles")          # sets the title bar text
+pygame.display.set_caption("Bouncing Bubbles")                  # sets the title bar text
 clock = pygame.time.Clock()                             # initialised the pygame clock
 running = True                                          # sets the running condition to true
 
@@ -54,13 +56,16 @@ while running:
         elif event.type == pygame.MOUSEBUTTONUP:        # checks for mouse click event
             mouseX = pygame.mouse.get_pos()[0]          # records mouse x value
             mouseY = pygame.mouse.get_pos()[1]          # record mouse y value
-            bubbles.append(Bubble(mouseX,mouseY,25,10))    # create a bubble os radius 25 at the position of the mouse
+            bubbles.append(Bubble(mouseX,mouseY,25,10,mouseY))    # create a bubble os radius 25 at the position of the mouse
 
     # --- Update any changes in variables
     for bubble in bubbles:                              # move each bubble object in the bubble array
-        bubble.y += bubble.speed            # each bubble will move each loop at the speed
-        if bubble.y + bubble.radius > HEIGHT or bubble.y - bubble.radius < 0:         # check if bubble is at edge screen
+        if bubble.y + bubble.radius > HEIGHT or bubble.y < bubble.bounceHeight:         # check if bubble is at edge screen
             bubble.speed *= -1
+        bubble.y += bubble.speed            # each bubble will move each loop at the speed
+        if bubble.y < bubble.bounceHeight:
+            bubble.bounceHeight += 10
+        
     
 
     # --- Draw objects
