@@ -29,7 +29,7 @@ class Bubble:
         self.bubbleR = bubbleR
 
     def show(self, surface):
-        pygame.draw.circle(surface, WHITE)
+        pygame.draw.circle(surface, WHITE,(self.bubbleX, self.bubbleY), self.bubbleR, 0)
 
 # --- DECLARE FUNCTIONS
 
@@ -63,7 +63,8 @@ while running:
 
     # --- Draw objects
     screen.fill(BLACK)
-    
+    for bubble in bubbles:
+        bubble.show(screen)    
     
     # *after* drawing everything, flip the display (displays)
     pygame.display.flip()
