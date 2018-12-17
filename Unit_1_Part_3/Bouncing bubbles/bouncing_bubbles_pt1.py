@@ -56,15 +56,16 @@ while running:
             bubbles.append(Bubble(mouseX,mouseY,25))    # create a bubble os radius 25 at the position of the mouse
 
     # --- Update any changes in variables
-    for bubble in bubbles:
-        bubble.bubbleX += 1
+    for bubble in bubbles:                              # move each bubble object in the bubble array
+        bubble.bubbleY += 1                             # each bubble will move down one pixel each loop
     
     
 
     # --- Draw objects
-    screen.fill(BLACK)
-    for bubble in bubbles:
-        bubble.show(screen)    
+    screen.fill(BLACK)                                  # create a black background 
+    
+    for bubble in bubbles:                              # draw each bubble object in the bubble array
+        bubble.show(screen)                             # each bubble's show method is called
     
     # *after* drawing everything, flip the display (displays)
     pygame.display.flip()
