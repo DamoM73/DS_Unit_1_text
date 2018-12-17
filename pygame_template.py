@@ -1,44 +1,48 @@
 # Pygame template - skeleton for a new pygame project
+# --- IMPORT LIBARIES
 import pygame
 import random
 
-
 # --- DECLARE CONSTANTS
-WIDTH = 360
-HEIGHT = 480
-FPS = 30
+# screen constants
+WIDTH = 640                                             # Screen width
+HEIGHT = 480                                            # Screen Height
+FPS = 30                                                # Frames per second
 
-# define colors
+# basic colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
-# initialize pygame and create window
-pygame.init()
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Template")
-clock = pygame.time.Clock()
+# --- DECLARE GLOBAL VARIABLES
 
-# Game loop
-running = True
+# --- DECLARE CLASSES
+
+# --- DECLARE FUNCTIONS
+
+# --- SETUP (runs once)
+pygame.init()                                           # initialises pygame
+screen = pygame.display.set_mode((WIDTH, HEIGHT))       # creates the screen
+pygame.display.set_caption("Template")                  # sets the title bar text
+clock = pygame.time.Clock()                             # initialised the pygame clock
+running = True                                          # sets the running condition to true
+
+# --- GAME LOOP (runs consistently)
 while running:
-    # keep loop running at the right speed
-    clock.tick(FPS)
+    clock.tick(FPS)                                     # keeps the game running at the right speed
     
-    # Event Handlers
-    for event in pygame.event.get():                # record events                
-        # check for different events and act upon them
-        
-        # closing window
+    # --- Event Handlers (check for different events and acts upon them)
+    for event in pygame.event.get():                    # retrieves events from event record                
+        # closing window event
         if event.type == pygame.QUIT:
             running = False
 
-    # Update any changes in variables
+    # --- Update any changes in variables
     
 
-    # Draw objects
+    # --- Draw objects
     screen.fill(BLACK)
     
     
