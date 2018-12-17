@@ -1,9 +1,7 @@
 # Pygame template - skeleton for a new pygame project
-
-# --- IMPORT LIBRARIES
+# --- IMPORT LIBARIES
 import pygame
 import random
-
 
 # --- DECLARE CONSTANTS
 # screen constants
@@ -11,7 +9,7 @@ WIDTH = 640                                             # Screen width
 HEIGHT = 480                                            # Screen Height
 FPS = 30                                                # Frames per second
 
-# define colors
+# basic colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
@@ -19,17 +17,8 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
 # --- DECLARE GLOBAL VARIABLES
-bubbles = []
 
 # --- DECLARE CLASSES
-class Bubble:
-    def __init__(self, bubbleX, bubbleY, bubbleR):
-        self.bubbleX = bubbleX
-        self.bubbleY = bubbleY
-        self.bubbleR = bubbleR
-
-    def show(self, surface):
-        pygame.draw.circle(surface, WHITE)
 
 # --- DECLARE FUNCTIONS
 
@@ -46,19 +35,11 @@ while running:
     
     # --- Event Handlers (check for different events and acts upon them)
     for event in pygame.event.get():                    # retrieves events from event record                
-        
-        if event.type == pygame.QUIT:                   # checks for closing window event
+        # closing window event
+        if event.type == pygame.QUIT:
             running = False                             # sets running condition to false, exiting the game loop
 
-        elif event.type == pygame.MOUSEBUTTONUP:        # checks for mouse click event
-            mouseX = pygame.mouse.get_pos()[0]          # records mouse x value
-            mouseY = pygame.mouse.get_pos()[1]          # record mouse y value
-            bubbles.append(Bubble(mouseX,mouseY,25))    # create a bubble os radius 25 at the position of the mouse
-
     # --- Update any changes in variables
-    for bubble in bubbles:
-        bubble.bubbleX += 1
-    
     
 
     # --- Draw objects
