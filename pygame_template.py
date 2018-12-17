@@ -2,6 +2,8 @@
 import pygame
 import random
 
+
+# --- DECLARE CONSTANTS
 WIDTH = 360
 HEIGHT = 480
 FPS = 30
@@ -15,30 +17,32 @@ BLUE = (0, 0, 255)
 
 # initialize pygame and create window
 pygame.init()
-pygame.mixer.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("My Game")
+pygame.display.set_caption("Template")
 clock = pygame.time.Clock()
 
-all_sprites = pygame.sprite.Group()
 # Game loop
 running = True
 while running:
     # keep loop running at the right speed
     clock.tick(FPS)
-    # Process input (events)
-    for event in pygame.event.get():
-        # check for closing window
+    
+    # Event Handlers
+    for event in pygame.event.get():                # record events                
+        # check for different events and act upon them
+        
+        # closing window
         if event.type == pygame.QUIT:
             running = False
 
-    # Update
-    all_sprites.update()
+    # Update any changes in variables
+    
 
-    # Draw / render
+    # Draw objects
     screen.fill(BLACK)
-    all_sprites.draw(screen)
-    # *after* drawing everything, flip the display
+    
+    
+    # *after* drawing everything, flip the display (displays)
     pygame.display.flip()
 
 pygame.quit()
