@@ -58,7 +58,7 @@ function displayFloor(){
     numberOfTilesY = floor_width / tile_width;      // stores number of tiles in a column
 
     strokeWeight(2);
-    rect(0, 0, floor_length, floor_width);          // output the background
+    rect(0, 0, floor_width, floor_length);          // output the background
 
     // generate tiles
     while (countTilesY < numberOfTilesY){           // prevents drawing over in a column

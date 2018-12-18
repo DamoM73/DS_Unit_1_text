@@ -5,7 +5,7 @@ var f2 = 1;
 var numberOfBubbles = 0;
 
 function setup() {
-    createCanvas(400,400);
+    createCanvas(1000,400);
     background(51);
 }
 
