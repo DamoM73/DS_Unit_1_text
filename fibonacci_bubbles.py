@@ -14,15 +14,13 @@ total = 0
 f1 = 0
 f2 = 1
 numberOfBubbles = 0
-bubbleX = 0
-bubbleY = HEIGHT
-x1 = bubbleX
-y1 = bubbleY
+x1 = 0                                                      # the left most x value of the circle
+y1 = HEIGHT                                                 # the left most y value of the circle
 
 # INITIALISE TKINTER
-tk = Tk()                                                  # create a tk object
-canvas = Canvas(tk, width = WIDTH, height = HEIGHT)        # create a canvas on the object
-tk.title("Name")                                            # change the window title
+tk = Tk()                                                   # create a tk object
+canvas = Canvas(tk, width = WIDTH, height = HEIGHT)         # create a canvas on the object
+tk.title("Fibonacci Bubbles")                               # change the window title
 canvas.pack()                                               # display the canvas
 
 while True:
@@ -40,4 +38,4 @@ while True:
     tk.update()    
 
 
-tk.mainloop()                                           #continue to display the canvas
+tk.mainloop()                                               #continue to display the canvas
