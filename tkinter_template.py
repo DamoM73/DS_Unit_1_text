@@ -11,9 +11,9 @@ HEIGHT = 600
 # GLOBAL VARIABLES
 
 # INITIALISE TKINTER
-tk = Tk()                                                  # create a tk object
-canvas = Canvas(tk, width = WIDTH, height = HEIGHT)        # create a canvas on the object
+tk = Tk()                                                   # create a tk object
+canvas = Canvas(tk, width = WIDTH, height = HEIGHT)         # create a canvas on the object
 tk.title("Name")                                            # change the window title
 canvas.pack()                                               # display the canvas
 
-tk.mainloop()                                           #continue to display the canvas
+tk.mainloop()                                               #continue to display the canvas
