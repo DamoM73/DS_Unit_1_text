@@ -56,7 +56,7 @@ while running:
         elif event.type == pygame.MOUSEBUTTONUP:        # checks for mouse click event
             mouseX = pygame.mouse.get_pos()[0]          # records mouse x value
             mouseY = pygame.mouse.get_pos()[1]          # record mouse y value
-            bubbles.append(Bubble(mouseX,mouseY,25,10,mouseY))    # create a bubble os radius 25 at the position of the mouse
+            bubbles.append(Bubble(mouseX,mouseY,25,10,mouse))    # create a bubble os radius 25 at the position of the mouse
 
     # --- Update any changes in variables
     for bubble in bubbles:                              # move each bubble object in the bubble array
