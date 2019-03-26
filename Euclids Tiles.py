@@ -5,7 +5,7 @@ WIDTH = 800
 HEIGHT = 600
 
 # GLOBAL VARIABLES
-floor = [150, 345]
+floor = [150,345]
 
 # CLASSES
 
@@ -60,9 +60,9 @@ def displayTileSize(floor, tile):
 
 
 # INITIALISE TKINTER
-tk = Tk()                                                   # create a tk object
-canvas = Canvas(tk, width = WIDTH, height = HEIGHT)         # create a canvas on the object
-tk.title("Euclid's Tiles")                                            # change the window title
+window = Tk()                                               # create a tk object
+canvas = Canvas(window, width = WIDTH, height = HEIGHT)         # create a canvas on the object
+window.title("Euclid's Tiles")                              # change the window title
 canvas.pack()                                               # display the canvas
 
 tileSize = calculateTileSize(floor)
@@ -70,4 +70,4 @@ displayFloor(floor, tileSize)
 displayTileSize(floor, tileSize)
 
 
-tk.mainloop()                                               #continue to display the canvas
+window.mainloop()                                               #continue to display the canvas
