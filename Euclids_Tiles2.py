@@ -42,7 +42,7 @@ def display_tile_size(room_width, room_height, tile, canvas):
     # initalise vaiables
     number_of_tiles_X = room_width // tile
     number_of_tiles_Y = room_height // tile
-    canvas.create_text(CANVAS_WIDTH / 2, CANVAS_HEIGHT - 40, text="Yoour perfect square tile has a side of " + str(tile) + " cm.")
+    canvas.create_text(CANVAS_WIDTH / 2, CANVAS_HEIGHT - 40, text="Your perfect square tile has a side of " + str(tile) + " cm.")
     canvas.create_text(CANVAS_WIDTH / 2, CANVAS_HEIGHT -20, text="You will need " + str(number_of_tiles_X * number_of_tiles_Y) + " tiles.")
 
 
