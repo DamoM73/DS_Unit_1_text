@@ -1,1 +1,2 @@
-print(345//15)
+for i in range(5):
+    print(i)
