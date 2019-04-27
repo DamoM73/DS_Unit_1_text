@@ -4,13 +4,15 @@ WIDTH = 600
 HEIGHT = 400
 SIZE = 20
 
+# **** Functions ****
 def lmc_task(event):
-    canvas.create_oval(event.x-SIZE/2, event.y-SIZE/2, event.x+SIZE/2, event.y+SIZE/2, fill="orange")
+    ball = canvas.create_oval(event.x-SIZE/2, event.y-SIZE/2, event.x+SIZE/2, event.y+SIZE/2, fill="orange")
 
 # **** Create Window ****
 root = Tk()
 #root.geometry("600x400")
 root.title("Bouncing Bubbles")
+
 
 # **** Add to window ****
 canvas = Canvas(root, bg="black", width=WIDTH, height=HEIGHT)
