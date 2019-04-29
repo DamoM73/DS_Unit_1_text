@@ -15,7 +15,7 @@ class Ball:
         self.speedx = random.randrange(-10,10)
         self.speedy = random.randrange(-10,10)
         self.active = True
-        self.move_active()
+        self.ball_update()
 
     def ball_update(self):
         canvas.move(self.shape, self.speedx, self.speedy)
@@ -24,11 +24,8 @@ class Ball:
             self.speedx *= -1
         if pos[3] >= HEIGHT or pos[1] <= 0:
             self.speedy *= -1
+        root.after(40, self.ball_update)
 
-    def move_active(self):
-        if self.active:
-            self.ball_update()
-            root.after(40, self.move_active) 
 
 root = Tk()
 canvas = Canvas(root, width=WIDTH, height=HEIGHT, bg="grey")
