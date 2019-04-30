@@ -14,7 +14,6 @@ class Ball:
         self.shape = canvas.create_oval(x, y, x+SIZE, y+SIZE, fill=color)
         self.speedx = random.randrange(-10,10)
         self.speedy = random.randrange(-10,10)
-        self.active = True
         self.ball_update()
 
     def ball_update(self):
